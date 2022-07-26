@@ -1,0 +1,61 @@
+#include <iostream>
+using std::string;
+
+//Abstraction
+class Abstractpeeps {
+    virtual void AskForPromotion()=0;
+};
+//till here
+
+class peeps:Abstractpeeps {
+//encapsulation
+private:
+    string name;
+    int age;
+
+public:
+    
+    void setAge(int Age){
+        age = Age;
+    }
+    int getAge(){
+        return age;
+    }
+//till here
+
+    void IntroduceYourself(){
+        std::cout << name << std::endl;
+        std::cout << age << std::endl;
+    }
+    peeps(string Name, int Age){
+        name = Name;
+        age = Age;
+    }
+    void AskForPromotion(){
+        if(age<20)
+        std::cout << "u got promoted!";
+    }
+};
+
+//Inheritance
+class Dev: public peeps {
+public:
+    string ProgrammingLang;
+    Dev(string Name, int Age, string programminglang)
+        :peeps(Name,Age)
+        {
+            ProgrammingLang = programminglang;
+        }
+    void Intro(){std::cout<< getAge();}
+};
+//till here
+
+int main(){
+    peeps peep1 = peeps("Ron",20);
+    peep1.IntroduceYourself();
+    peep1.setAge(18);
+    peep1.AskForPromotion();
+    Dev dev1 = Dev("Jay", 21, "python");
+    dev1.IntroduceYourself();
+
+}
