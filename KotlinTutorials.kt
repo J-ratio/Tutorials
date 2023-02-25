@@ -41,12 +41,34 @@
        problem statement, it fails to work with human understanding of the world we live in and the data produced by it.
        Maybe in future, when all code is AI generated we will see a huge migration towards new codebases which are biased towards 
        declarative and parallel way of programing. 
+    */
 
-    
+    //-------------------------------------
 
-    //OOP: Classes (general format of comaprable entities within a program 
+
+    /*OOP: Classes (general format of comaprable entities within a program 
                     ForEg: One can create a NPC class containg health variable
                     and assign it to all NPCs in the game. As a result, all NPCs in the game now have a health component) 
+    */
+
+    fun main() {
+
+        println("AA")
+        MyLaptop = Laptop();
+        MyLaptop.OS = "Linux"
+        MyLaptop.Hack_NASA();
+
+    }
+
+    class Laptop {
+        
+        var Model: String;
+        var OS: String;
+
+        Hack_NASA() if(OS == "Linux") println("Hacking NASA in 3,2,1... NASA hacked!") else println("Sorry, we dont have the capability to hack NASA.")
+
+    }
+    
     
                     
 
