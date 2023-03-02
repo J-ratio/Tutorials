@@ -2,42 +2,44 @@ package com.example.myapplication
 
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myapplication.databinding.ActivityMainBinding
+import java.text.NumberFormat
 
 private const val TAG = "MainActivity"
 
 class MainActivity : AppCompatActivity() {
 
-    fun logging() {
-        Log.v(TAG, "Hello WOrld!")
+    private fun logging() {
+        Log.v(TAG, "Hello World!")
     }
+
+    lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        val rollBtn = findViewById<Button>(R.id.button)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        logging()
 
-        rollBtn.setOnClickListener {
-            val toast = Toast.makeText(this, "Dice Rolled!", Toast.LENGTH_SHORT)
-            toast.show()
-            rollDice()
-            logging()
-        }
+        binding.CalculateButton.setOnClickListener{ calculateTip() }
+
     }
 
-    private fun rollDice() {
+    private fun calculateTip() {
 
-        val dice = Dice(6)
-        findViewById<TextView>(R.id.textView).text = dice.roll().toString()
-    }
-
-    class Dice(private val sideNum: Int) {
-
-        fun roll(): Int {
-            return (1..sideNum).random()
+        val cost: Double = binding.costOfServiceTextField.text.toString().toDouble()
+        val tipPercentage= when(binding.tipOptions.checkedRadioButtonId) {
+            binding.option20Percent.id -> 0.2
+            binding.option18Percent.id -> 0.18
+            else -> 0.15
         }
+
+        val tip = if(binding.roundUpSwitch.isChecked) kotlin.math.ceil(cost*tipPercentage)  else cost*tipPercentage
+
+        val formattedTip = NumberFormat.getCurrencyInstance().format(tip)
+        binding.tipAmount.text = "Tip Amount: $formattedTip"
+
     }
 }
 
