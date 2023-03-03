@@ -3,8 +3,9 @@ package com.example.myapplication
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myapplication.adapter.ItemAdapter
+import com.example.myapplication.data.DataSource
 import com.example.myapplication.databinding.ActivityMainBinding
-import java.text.NumberFormat
 
 private const val TAG = "MainActivity"
 
@@ -22,23 +23,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         logging()
 
-        binding.CalculateButton.setOnClickListener{ calculateTip() }
+        val myDataset = DataSource().loadAffirmation()
 
-    }
+        val recyclerView = binding.recyclerView
 
-    private fun calculateTip() {
-
-        val cost: Double = binding.costOfServiceTextField.text.toString().toDouble()
-        val tipPercentage= when(binding.tipOptions.checkedRadioButtonId) {
-            binding.option20Percent.id -> 0.2
-            binding.option18Percent.id -> 0.18
-            else -> 0.15
-        }
-
-        val tip = if(binding.roundUpSwitch.isChecked) kotlin.math.ceil(cost*tipPercentage)  else cost*tipPercentage
-
-        val formattedTip = NumberFormat.getCurrencyInstance().format(tip)
-        binding.tipAmount.text = "Tip Amount: $formattedTip"
+        recyclerView.adapter = ItemAdapter(this, myDataset)
+        recyclerView.setHasFixedSize(true)
 
     }
 }
