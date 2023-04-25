@@ -1,18 +1,25 @@
 const express = require('express');
 const path = require('path');
-const logger = require('./middleware/logger')
+const exphbs = require('express-handlebars');
+const logger = require('./middleware/logger');
+const shapes = require('./shapes')
 
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false}));
 
-//redirecting via get
-// app.get('/', (req, res) => {
-//     console.log(__dirname);
-//     res.sendFile(path.join(__dirname, 'public', 'index.html'));
-// })
+//Handlebars Middleware
+app.engine('handlebars', exphbs.engine( { defaultLayout: 'main'} ));
+app.set('view engine', 'handlebars');
 
+// redirecting via get
+app.get('/', (req, res) => {
+    res.render('index', {
+        title: "Shapes App",
+        shapes
+    });
+})
 
 //Setting a static folder
 app.use(express.static(path.join(__dirname, 'public')));
