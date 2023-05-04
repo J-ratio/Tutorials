@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Basics/Basic Datatypes.md",
+                "file": "Function Expressions.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Basics/Basic Datatypes.md",
+                "file": "Function Expressions.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Basics/Basic Datatypes.md",
+                "file": "Function Expressions.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Basics/Basic Datatypes.md"
+                "file": "Function Expressions.md"
               }
             }
           }
@@ -156,12 +156,14 @@
   },
   "active": "fa27cc977f46180e",
   "lastOpenFiles": [
+    "Basics/Labels.md",
+    "Function Expressions.md",
     "Basics/Type Conversions.md",
-    "Basics/Variables.md",
     "Basics/Basic Datatypes.md",
+    "ReadMe.md",
+    "Basics/Variables.md",
     "Untitled.canvas",
     "Untitled 1.canvas",
-    "ReadMe.md",
     "Basics"
   ]
 }
