@@ -16,4 +16,4 @@ alert(user.isAdmin); // false
 ```
 
 
-##### Next, [[Symbols]]
+##### Next, [[Object properties configuration]]

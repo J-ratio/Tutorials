@@ -8,12 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "fa27cc977f46180e",
+            "id": "32b3b455073dc896",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Function Expressions.md",
+                "file": "Basics/Error handling.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Function Expressions.md",
+                "file": "Basics/Error handling.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Function Expressions.md",
+                "file": "Basics/Error handling.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Function Expressions.md"
+                "file": "Basics/Error handling.md"
               }
             }
           }
@@ -154,13 +154,30 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "fa27cc977f46180e",
+  "active": "32b3b455073dc896",
   "lastOpenFiles": [
+    "Classes/Properties and Methods.md",
+    "Basics/Error handling.md",
+    "Promises, async-await",
+    "Classes/Class.md",
+    "Basics/Function Expressions.md",
     "Basics/Labels.md",
-    "Function Expressions.md",
+    "Data Types/Map and Set.md",
+    "Data Types/WeakMap and WeakSet.md",
+    "Data Types/Number, Strings and Arrays.md",
+    "Objects/Prototype.md",
+    "Classes",
+    "Objects/Object properties configuration.md",
+    "Objects/Object.md",
+    "Objects/Object Cloning.md",
+    "Objects/Constructor Functions.md",
+    "Data Types/JSON.md",
+    "Data Types",
+    "Objects/Symbols.md",
+    "ReadMe.md",
+    "Objects",
     "Basics/Type Conversions.md",
     "Basics/Basic Datatypes.md",
-    "ReadMe.md",
     "Basics/Variables.md",
     "Untitled.canvas",
     "Untitled 1.canvas",
