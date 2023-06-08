@@ -1,10 +1,10 @@
 #include <stdio.h>
 
-int main()
+int main(void)
 {
     int Integer = 5;
     float Float = 5.0344;
-    char Char[] = "char";
+    char Char[] = "not_char";
 
     printf("Integer: %d, Float: %f, Char: %s", Integer,Float,Char);
 
